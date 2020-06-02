@@ -26,7 +26,7 @@ function Form(props) {
     onSubmit: function onSubmit(e) {
       return e.preventDefault();
     }
-  }, props.children);
+  }, "Esto es un form", props.children);
 }
 
 function FormAcceptButton(props) {
