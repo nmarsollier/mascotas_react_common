@@ -1,0 +1,49 @@
+{
+  "name": "mascotas_react_common",
+  "version": "1.0.0",
+  "description": "Libreria comun para mascotas react",
+  "author": "nmarsollier",
+  "license": "MIT",
+  "repository": "nmarsollier/mascotas_react_common",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "prepare": "run-s build",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "predeploy": "cd example && npm install && npm run build",
+    "deploy": "gh-pages -d example/build"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "25.2.3",
+    "@types/node": "14.0.4",
+    "@types/react": "16.9.35",
+    "@types/react-dom": "16.9.8",
+    "microbundle-crl": "0.13.10",
+    "babel-eslint": "10.0.3",
+    "cross-env": "7.0.2",
+    "gh-pages": "2.2.0",
+    "npm-run-all": "4.1.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-scripts": "3.4.1",
+    "tslint": "6.1.2",
+    "tslint-react": "5.0.0",
+    "typescript": "3.9.3"
+  },
+  "files": [
+    "dist"
+  ]
+}

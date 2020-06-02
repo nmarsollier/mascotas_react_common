@@ -1,2 +1,3 @@
 # mascotas_react_common
-Componentes comunes para mostrar modularizacion
+
+Para mostrar como modularizar y usar librerías propias.

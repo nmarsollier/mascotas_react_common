@@ -1,0 +1,1 @@
+{"version":3,"file":"index.modern.js","sources":["../src/index.tsx"],"sourcesContent":["\nexport default function CommonsLib() {\n    return null\n}\n"],"names":["CommonsLib"],"mappings":"SACwBA;AACpB,SAAO,IAAP;AACH;;;;"}
