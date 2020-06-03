@@ -3,5 +3,5 @@ interface FormLabelProps {
     label: string;
     text: string | undefined;
 }
-export default function FormLabel(props: FormLabelProps): JSX.Element;
+export declare function FormLabel(props: FormLabelProps): JSX.Element;
 export {};

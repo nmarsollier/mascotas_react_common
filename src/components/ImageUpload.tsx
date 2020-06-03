@@ -5,7 +5,7 @@ interface ImageUploadProps {
     onChange: (image: string) => void;
 }
 
-export default function ImageUpload(props: ImageUploadProps) {
+export function ImageUpload(props: ImageUploadProps) {
     const fileInput = useRef<HTMLInputElement>(null)
 
     const imageClick = () => {

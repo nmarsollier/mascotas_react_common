@@ -7,5 +7,5 @@ interface FormInputProps {
     value?: string | undefined;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => any;
 }
-export default function FormInput(props: FormInputProps): JSX.Element;
+export declare function FormInput(props: FormInputProps): JSX.Element;
 export {};

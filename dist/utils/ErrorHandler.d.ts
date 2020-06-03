@@ -1,4 +1,4 @@
-import ApiError from "./ApiError";
+import { ApiError } from "./ApiError";
 declare class ErrorHandler {
     constructor(forceUpdate: () => any);
     private forceUpdate;

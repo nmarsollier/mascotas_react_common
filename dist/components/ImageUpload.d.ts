@@ -3,5 +3,5 @@ interface ImageUploadProps {
     src: string;
     onChange: (image: string) => void;
 }
-export default function ImageUpload(props: ImageUploadProps): JSX.Element;
+export declare function ImageUpload(props: ImageUploadProps): JSX.Element;
 export {};

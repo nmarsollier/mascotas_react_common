@@ -1,6 +1,6 @@
-import React from "react"
-import ErrorLabel from "./ErrorLabel";
+import React from "react";
 import ErrorHandler from "./ErrorHandler";
+import { ErrorLabel } from "./ErrorLabel";
 
 interface FormPasswordProps {
     label: string,
@@ -10,7 +10,7 @@ interface FormPasswordProps {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => any
 }
 
-export default function FormPassword(props: FormPasswordProps) {
+export function FormPassword(props: FormPasswordProps) {
     return (
         <div className="form-group">
             <label>{props.label}</label>

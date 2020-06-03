@@ -1,5 +1,5 @@
 import React from "react"
-import ErrorLabel from "./ErrorLabel";
+import { ErrorLabel } from "./ErrorLabel";
 import ErrorHandler from "./ErrorHandler";
 
 interface FormInputProps {
@@ -10,7 +10,7 @@ interface FormInputProps {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => any
 }
 
-export default function FormInput(props: FormInputProps) {
+export function FormInput(props: FormInputProps) {
     return (
         <div className="form-group">
             <label>{props.label}</label>

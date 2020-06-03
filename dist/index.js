@@ -166,6 +166,12 @@ var environment = {
   backendUrl: process.env.BACKEND_URL || "http://localhost:3000"
 };
 
+
+
+var ApiError = {
+    __proto__: null
+};
+
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
   if (typeof o === "string") return _arrayLikeToArray(o, minLen);
@@ -285,6 +291,7 @@ function useErrorHandler() {
   return handler;
 }
 
+exports.ApiErrorModule = ApiError;
 exports.DangerLabel = DangerLabel;
 exports.ErrorHandler = ErrorHandler;
 exports.ErrorLabel = ErrorLabel;

@@ -3,5 +3,5 @@ interface FormAcceptButtonProps {
     label: string;
     onClick: () => any;
 }
-export default function FormAcceptButton(props: FormAcceptButtonProps): JSX.Element;
+export declare function FormAcceptButton(props: FormAcceptButtonProps): JSX.Element;
 export {};

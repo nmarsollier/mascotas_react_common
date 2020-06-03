@@ -1,4 +1,4 @@
-export default interface ApiError {
+export interface ApiError {
     response?: {
         data?: {
             error?: string;

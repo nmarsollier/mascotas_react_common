@@ -5,7 +5,7 @@ interface FormButtonProps {
     onClick: () => any
 }
 
-export default function FormButton(props: FormButtonProps) {
+export function FormButton(props: FormButtonProps) {
     return (
         <button className="btn btn-light" onClick={props.onClick}>{props.label}</button>
     )

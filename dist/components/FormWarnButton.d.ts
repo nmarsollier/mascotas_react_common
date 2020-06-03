@@ -4,5 +4,5 @@ interface FormWarnButtonProps {
     hidden: boolean;
     onClick: () => any;
 }
-export default function FormWarnButton(props: FormWarnButtonProps): JSX.Element;
+export declare function FormWarnButton(props: FormWarnButtonProps): JSX.Element;
 export {};

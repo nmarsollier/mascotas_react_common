@@ -163,6 +163,12 @@ var environment = {
   backendUrl: process.env.BACKEND_URL || "http://localhost:3000"
 };
 
+
+
+var ApiError = {
+    __proto__: null
+};
+
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
   if (typeof o === "string") return _arrayLikeToArray(o, minLen);
@@ -282,5 +288,5 @@ function useErrorHandler() {
   return handler;
 }
 
-export { DangerLabel, ErrorHandler, ErrorLabel, Form, FormAcceptButton, FormButton, FormButtonBar, FormInput, FormLabel, FormPassword, FormTitle, FormWarnButton, GlobalContent, ImageUpload, environment, goHome, useErrorHandler, useForceUpdate };
+export { ApiError as ApiErrorModule, DangerLabel, ErrorHandler, ErrorLabel, Form, FormAcceptButton, FormButton, FormButtonBar, FormInput, FormLabel, FormPassword, FormTitle, FormWarnButton, GlobalContent, ImageUpload, environment, goHome, useErrorHandler, useForceUpdate };
 //# sourceMappingURL=index.modern.js.map

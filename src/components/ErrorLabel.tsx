@@ -4,7 +4,7 @@ interface ErrorLabelProps {
     message: string | undefined;
 }
 
-export default function ErrorLabel(props: ErrorLabelProps) {
+export function ErrorLabel(props: ErrorLabelProps) {
     if (!props.message) {
         return null
     }

@@ -7,5 +7,5 @@ interface FormPasswordProps {
     value?: string | undefined;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => any;
 }
-export default function FormPassword(props: FormPasswordProps): JSX.Element;
+export declare function FormPassword(props: FormPasswordProps): JSX.Element;
 export {};

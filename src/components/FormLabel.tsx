@@ -4,7 +4,7 @@ interface FormLabelProps {
     text: string | undefined
 }
 
-export default function FormLabel(props: FormLabelProps) {
+export function FormLabel(props: FormLabelProps) {
     return (
         <div className="form-group">
             <label>params.label</label>

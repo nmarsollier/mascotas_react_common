@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ApiError from "./ApiError";
+import { ApiError } from "./ApiError";
 import { useForceUpdate } from "./Tools";
 
 class ErrorHandler {

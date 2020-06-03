@@ -4,7 +4,7 @@ interface DangerLabelProps {
     message: string | undefined;
 }
 
-export default function DangerLabel(props: DangerLabelProps) {
+export function DangerLabel(props: DangerLabelProps) {
     if (!props.message) {
         return null
     }

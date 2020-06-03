@@ -6,7 +6,7 @@ interface FormWarnButtonProps {
     onClick: () => any
 }
 
-export default function FormWarnButton(props: FormWarnButtonProps) {
+export function FormWarnButton(props: FormWarnButtonProps) {
     return (
         <button hidden={props.hidden} className="btn btn-warning" onClick={props.onClick}>{props.label}</button>
     )
