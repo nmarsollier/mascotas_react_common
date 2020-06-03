@@ -205,6 +205,9 @@ function _createForOfIteratorHelperLoose(o, allowArrayLike) {
   return it.next.bind(it);
 }
 
+function goHome(props) {
+  props.history.push("/");
+}
 function useForceUpdate() {
   var setForceUpdate = useState(0)[1];
   return function () {
@@ -279,5 +282,5 @@ function useErrorHandler() {
   return handler;
 }
 
-export { DangerLabel, ErrorHandler, ErrorLabel, Form, FormAcceptButton, FormButton, FormButtonBar, FormInput, FormLabel, FormPassword, FormTitle, FormWarnButton, GlobalContent, ImageUpload, environment, useErrorHandler };
+export { DangerLabel, ErrorHandler, ErrorLabel, Form, FormAcceptButton, FormButton, FormButtonBar, FormInput, FormLabel, FormPassword, FormTitle, FormWarnButton, GlobalContent, ImageUpload, environment, goHome, useErrorHandler, useForceUpdate };
 //# sourceMappingURL=index.modern.js.map

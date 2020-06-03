@@ -14,6 +14,7 @@ import ImageUpload from "./components/ImageUpload";
 import { environment } from "./environment/environment";
 import * as ApiErrorModule from "./utils/ApiError";
 import { ErrorHandler, useErrorHandler } from "./utils/ErrorHandler";
+import {goHome, useForceUpdate} from "./utils/Tools"
 
 export {
     DangerLabel,
@@ -31,7 +32,9 @@ export {
     ImageUpload,
     ErrorHandler,
     useErrorHandler,
-    environment
+    environment,
+    goHome,
+    useForceUpdate
 };
 
 export type ApiError = ApiErrorModule.default;

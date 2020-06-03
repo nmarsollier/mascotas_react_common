@@ -208,6 +208,9 @@ function _createForOfIteratorHelperLoose(o, allowArrayLike) {
   return it.next.bind(it);
 }
 
+function goHome(props) {
+  props.history.push("/");
+}
 function useForceUpdate() {
   var setForceUpdate = React$1.useState(0)[1];
   return function () {
@@ -297,5 +300,7 @@ exports.FormWarnButton = FormWarnButton;
 exports.GlobalContent = GlobalContent;
 exports.ImageUpload = ImageUpload;
 exports.environment = environment;
+exports.goHome = goHome;
 exports.useErrorHandler = useErrorHandler;
+exports.useForceUpdate = useForceUpdate;
 //# sourceMappingURL=index.js.map

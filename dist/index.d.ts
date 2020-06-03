@@ -14,5 +14,6 @@ import ImageUpload from "./components/ImageUpload";
 import { environment } from "./environment/environment";
 import * as ApiErrorModule from "./utils/ApiError";
 import { ErrorHandler, useErrorHandler } from "./utils/ErrorHandler";
-export { DangerLabel, ErrorLabel, Form, FormAcceptButton, FormButton, FormButtonBar, FormInput, FormLabel, FormPassword, FormTitle, FormWarnButton, GlobalContent, ImageUpload, ErrorHandler, useErrorHandler, environment };
+import { goHome, useForceUpdate } from "./utils/Tools";
+export { DangerLabel, ErrorLabel, Form, FormAcceptButton, FormButton, FormButtonBar, FormInput, FormLabel, FormPassword, FormTitle, FormWarnButton, GlobalContent, ImageUpload, ErrorHandler, useErrorHandler, environment, goHome, useForceUpdate };
 export declare type ApiError = ApiErrorModule.default;
