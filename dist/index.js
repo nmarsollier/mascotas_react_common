@@ -29,7 +29,7 @@ function Form(props) {
     onSubmit: function onSubmit(e) {
       return e.preventDefault();
     }
-  }, "Esto es un form", props.children);
+  }, props.children);
 }
 
 function FormAcceptButton(props) {
@@ -162,7 +162,123 @@ function getBase64(file, cb) {
   };
 }
 
+var environment = {
+  backendUrl: process.env.BACKEND_URL || "http://localhost:3000"
+};
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _createForOfIteratorHelperLoose(o) {
+  var i = 0;
+
+  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) return function () {
+      if (i >= o.length) return {
+        done: true
+      };
+      return {
+        done: false,
+        value: o[i++]
+      };
+    };
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  i = o[Symbol.iterator]();
+  return i.next.bind(i);
+}
+
+function useForceUpdate() {
+  var setForceUpdate = React$1.useState(0)[1];
+  return function () {
+    setForceUpdate(Date.now);
+  };
+}
+
+var ErrorHandler = /*#__PURE__*/function () {
+  function ErrorHandler(forceUpdate) {
+    this.errorMessage = undefined;
+    this.errors = new Map();
+    this.forceUpdate = forceUpdate;
+  }
+
+  var _proto = ErrorHandler.prototype;
+
+  _proto.processRestValidations = function processRestValidations(data) {
+    if (this.errors && this.errors.size > 0) {
+      this.cleanRestValidations();
+      this.forceUpdate();
+    }
+
+    if (!data.response || !data.response.data) {
+      this.errorMessage = "Problemas de conexión, verifique conexión a internet.";
+      this.forceUpdate();
+      return;
+    }
+
+    if (data.response.data.messages) {
+      for (var _iterator = _createForOfIteratorHelperLoose(data.response.data.messages), _step; !(_step = _iterator()).done;) {
+        var error = _step.value;
+        this.errors.set(error.path, error.message);
+      }
+    } else if (typeof data.response.data.error === "string") {
+      this.errorMessage = data.response.data.error;
+    } else {
+      this.errorMessage = "Problemas internos del servidor";
+    }
+
+    this.forceUpdate();
+  };
+
+  _proto.addError = function addError(component, message) {
+    this.errors.set(component, message);
+    this.forceUpdate();
+  };
+
+  _proto.cleanRestValidations = function cleanRestValidations() {
+    this.errorMessage = undefined;
+    this.errors.clear();
+    this.forceUpdate();
+  };
+
+  _proto.getErrorText = function getErrorText(item) {
+    return this.errors.get(item);
+  };
+
+  _proto.getErrorClass = function getErrorClass(component, baseClass) {
+    return baseClass + (this.getErrorText(component) ? " is-invalid" : "");
+  };
+
+  _proto.hasErrors = function hasErrors() {
+    return this.errors.size > 0 && !this.errorMessage;
+  };
+
+  return ErrorHandler;
+}();
+
+function useErrorHandler() {
+  var forceUpdate = useForceUpdate();
+  var handler = React$1.useState(new ErrorHandler(forceUpdate))[0];
+  return handler;
+}
+
 exports.DangerLabel = DangerLabel;
+exports.ErrorHandler = ErrorHandler;
 exports.ErrorLabel = ErrorLabel;
 exports.Form = Form;
 exports.FormAcceptButton = FormAcceptButton;
@@ -175,4 +291,6 @@ exports.FormTitle = FormTitle;
 exports.FormWarnButton = FormWarnButton;
 exports.GlobalContent = GlobalContent;
 exports.ImageUpload = ImageUpload;
+exports.environment = environment;
+exports.useErrorHandler = useErrorHandler;
 //# sourceMappingURL=index.js.map

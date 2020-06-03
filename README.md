@@ -1,7 +1,6 @@
-# Librería de ejemplo mascotas_react_common
+# mascotas_react_common
 
-Para mostrar como modularizar y usar librerías propias.
-Notar los exports en index.tsx
+Son componentes básicos de la aplicación.
 
 ## Esta librería se incluye en package.json como
 
@@ -17,7 +16,7 @@ en modo desarrollador, ejecutamos en mascotas_react :
     npm link ../mascotas_react_common
 ```
 
-Desarrollamos normalmente en la libreria, cuando tenemos los cambios listos para probar ejecutamos en la carpeta de la libreria
+Desarrollamos normalmente en la librería, cuando tenemos los cambios listos para probar ejecutamos en la carpeta de la librería
 
 ```bash
     npm run build

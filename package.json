@@ -1,11 +1,12 @@
 {
   "name": "mascotas_react_common",
   "version": "1.0.0",
-  "description": "Libreria comun para mascotas react",
+  "description": "Librería común para mascotas react",
   "author": "nmarsollier",
   "license": "MIT",
   "repository": "nmarsollier/mascotas_react_common",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
