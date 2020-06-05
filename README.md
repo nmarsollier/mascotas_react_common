@@ -1,6 +1,8 @@
 # mascotas_react_commons
 
-Modulo Components react comunes para toda la app de mascotas.
+Modulo de Components React comunes para toda la UI React de [mascotas modular](https://github.com/nmarsollier/mascotas_react_app).
+
+Ver proyecto original en [mascotas](https://github.com/nmarsollier/mascotas).
 
 ## Modo de uso
 
